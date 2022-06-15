@@ -1,32 +1,19 @@
-function encodeAndDecodeMessages() {
-    let areas = document.querySelectorAll('textarea');
-    let firstInput = areas[0];
-    let secondInput = areas[1];
-    let buttons = Array.from(document.querySelectorAll('button'));
-    let firstButton = buttons[0];
-    let secondButton = buttons[1];
-    firstButton.addEventListener('click', encode);
-    secondButton.addEventListener('click',decode);
-    function encode(e){
-            let newInput = '';
-            let input = firstInput.value;
-            for (let index = 0; index < input.length; index++) {
-                newInput += String.fromCharCode(input[index].charCodeAt(0) + 1);
-            }
-    
-            secondInput.value = newInput;
-            firstInput.value = '';
-    
-
-    }
-    function decode(e){
-        let input = secondInput.value;
-            let newInput = '';
-            for (let index = 0; index < input.length; index++) {
-                newInput += String.fromCharCode(input[index].charCodeAt(0) - 1);
-            }
-        
-        firstInput.value = newInput;
-        secondInput.value = '';
-    }
+function lockedProfile() {
+    Array.from(document.querySelectorAll('.profile button')).forEach(
+        b => b.addEventListener('click' , showMore));
+    function showMore(e){
+        let profile = e.target.parentElement;    
+        let isActive = profile.querySelector
+    ('input[type="radio"][value="unlock"]').checked;
+        if (isActive){
+        let div = profile.querySelector('div');
+        if (e.target.textContent == 'Show more'){
+         e.target.textContent = 'Hide it'
+        div.style.display = 'block';
+        } else {
+           e.target.textContent = 'Show more';
+           div.style.display = 'none';
+       }
+   }
+}
 }
