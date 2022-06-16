@@ -3,38 +3,55 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Time Converter</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Furniture store</title>
 </head>
 
-<body onload="attachEventsListeners()">
+<body>
     <main>
-        <h1>Time Converter</h1>
-        <div>
-            <label for="days">Days: </label>
-            <input type="text" id="days">
-            <input id="daysBtn" type="button" value="Convert">
-        </div>
-        <div>
-            <label for="hours">Hours: </label>
-            <input type="text" id="hours">
-            <input id="hoursBtn" type="button" value="Convert">
-        </div>
-        <div>
-            <label for="minutes">Minutes: </label>
-            <input type="text" id="minutes">
-            <input id="minutesBtn" type="button" value="Convert">
-        </div>
-        <div>
-            <label for="seconds">Seconds: </label>
-            <input type="text" id="seconds">
-            <input id="secondsBtn" type="button" value="Convert">
+        <div class="store">
+            <h1 class="title">Furniture Store</h1>
+
+            <form>
+                <label>Model</label><br>
+                <input type="text" id="model" name="model" placeholder="Model...">
+
+                <label>Year</label><br>
+                <input type="number" id="year" name="year" placeholder="Year..">
+
+                <label>Description</label><br>
+                <textarea id="description" placeholder="Description..."></textarea>
+
+                <label>Price</label><br>
+                <input type="number" id="price" name="price" placeholder="Price...">
+                <button id="add">Add</button>
+            </form>
+
+            <table id="information">
+                <thead>
+                    <tr>
+                        <th class="type">Model</th>
+                        <th class="price">Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="furniture-list">
+                    
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total:</td>
+                        <td class="total-price">0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
     </main>
+    <footer>@JS Advanced Exam - Furniture Store </footer>
+    <script src="app.js"></script>
 </body>
-
-<script src="solution.js"></script>
 
 </html>
